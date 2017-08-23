@@ -1,0 +1,22 @@
+<h2 class = "sub-header"> faces </h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>persisted Face Id </th>
+        <th>Name</th>
+        <th>Image</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let face of faces">
+        <td>{{face.face_id}}
+        <td>{{face.name}}</td>
+        <td><img class="img-thumbnail" src={{face.img_url}} alt="img" style="width:100px;height:100px;"></td>
+        <td><a href="#/face/edit/{{face._id}}" class = "btn btn-default">Edit</a>
+        <button (click)="del(face._id)" class = "btn btn-danger">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

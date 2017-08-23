@@ -1,0 +1,53 @@
+<h1 class="text-center">Add Face to A Face list</h1>
+
+<form method="POST" (ngSubmit)="add()">
+	<div class="row col-md-offset-3">
+		<div class="form-group col-md-6">
+			<label for="">face List Id:</label>
+			<input type="text"  class="form-control" name="faceListId" [(ngModel)]="data.facelist_id">
+		</div>
+	</div>
+	<div class="row col-md-offset-3">
+		<div class="form-group col-md-6">
+			<label for="">name:</label>
+			<input type="text"  class="form-control" name="name" [(ngModel)]="data.name">
+		</div>
+	</div>
+	<div class="row col-md-offset-3">
+		<div class="form-group col-md-6">
+			<label for="">link:</label>
+			<input type="text" class="form-control" name="link" [(ngModel)]="data.link">
+		</div>	
+	</div>
+	<button type="submit" class="btn btn-primary row col-md-offset-6" style="padding-right:50px" >Add face</button>
+	<div [hidden]="!bar" class="row col-md-offset-4" style="padding-top: 20px">
+        <div class="form-group col-md-6">
+			<div class="progress">
+			  <div class="progress-bar progress-bar-striped active" role="progressbar"
+			  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%"> 
+			  </div>
+	         </div>
+		</div>
+	</div>
+</form>
+
+<div *ngIf="check">
+<h1 class="text-center"><b>Face Added...!!!</b></h1>
+<table>
+	<tr>
+		<th>Details</th>
+	</tr>
+	<br>
+	<tr>
+		<td><b>Name:</b>{{added.name}}<br><b>Face_id:</b>{{added.face_id}}</td>	
+	</tr>
+	<br><br>
+	<tr>
+		<th>Picture</th>
+	</tr>
+	<tr>
+		<td><img class="img-thumbnail" src={{added.img_url}} alt="img" style="width:300px;height:300px;"></td>
+	</tr>
+
+</table>
+</div>
